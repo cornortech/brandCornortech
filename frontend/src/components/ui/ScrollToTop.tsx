@@ -64,7 +64,7 @@ export default function ScrollToTopButton() {
         }
       `}</style>
 
-      <div className={`fixed bottom-8 right-8 z-9999 ${!visible ? "pointer-events-none" : ""}`}>
+      <div className={`fixed bottom-8 right-8 z-30 ${!visible ? "pointer-events-none" : ""}`}>
         <button
           onClick={scrollToTop}
           aria-label="Scroll to top"

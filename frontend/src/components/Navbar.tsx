@@ -27,16 +27,16 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    if(mobileMenuOpen){
+    if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
-    }else{
-      document.body.style.overflow = "auto";
+    } else {
+      document.body.style.overflow = "";
     }
 
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
     };
-  }, [mobileMenuOpen])
+  }, [mobileMenuOpen]);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -53,7 +53,9 @@ export default function Navbar() {
   const isDarkHeroPage = pathname === "/" || pathname === "/about";
 
   // Header style variables
-  const headerBg = isScrolled
+  const headerBg = mobileMenuOpen
+    ? "bg-slate-950 border-white/5 text-white"
+    : isScrolled
     ? "bg-white/90 border-slate-100 shadow-sm text-slate-800 backdrop-blur-md"
     : isDarkHeroPage
       ? "bg-transparent border-transparent text-white"
@@ -61,9 +63,9 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b ${headerBg}`}
+      className={`fixed top-0 left-0 right-0 z-[70] transition-all duration-300 border-b ${headerBg}`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-[80] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
 
           {/* ===== Logo ===== */}
@@ -77,7 +79,7 @@ export default function Navbar() {
             />
 
             <div className="flex flex-col gap-1">
-              <span className={`text-base font-extrabold tracking-tight transition-colors duration-200 ${isScrolled ? "text-slate-900" : isDarkHeroPage ? "text-white" : "text-slate-900"
+              <span className={`text-base font-extrabold tracking-tight transition-colors duration-200 ${mobileMenuOpen ? "text-white" : isScrolled ? "text-slate-900" : isDarkHeroPage ? "text-white" : "text-slate-900"
                 }`}>
 
                 <span className="text-[18px] text-primary group-hover:text-primary-light transition-colors">Brand</span>
@@ -135,8 +137,10 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-2 rounded-lg transition-colors focus:outline-none ${isScrolled ? "text-slate-800 hover:bg-slate-100" : isDarkHeroPage ? "text-white hover:bg-white/10" : "text-slate-800 hover:bg-slate-100"
+              className={`relative z-[90] p-2 rounded-lg transition-colors focus:outline-none ${mobileMenuOpen ? "text-white hover:bg-white/10" : isScrolled ? "text-slate-800 hover:bg-slate-100" : isDarkHeroPage ? "text-white hover:bg-white/10" : "text-slate-800 hover:bg-slate-100"
                 }`}
+              aria-expanded={mobileMenuOpen}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -148,8 +152,8 @@ export default function Navbar() {
 
       {/* ===== Mobile Drawer Overlay ===== */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-16 z-30 bg-bg-dark flex flex-col md:hidden animate-fade-in border-t border-white/5">
-          <div className="flex-1 px-4 py-8 space-y-6 flex flex-col justify-between">
+        <div className="fixed inset-0 z-[60] bg-slate-950 flex flex-col md:hidden animate-fade-in border-t border-white/5">
+          <div className="flex-1 px-4 pt-24 pb-8 space-y-6 flex flex-col justify-between">
             <nav className="flex flex-col space-y-5">
               {navLinks.map((link, idx) => {
                 const isActive = pathname === link.href;

@@ -68,7 +68,7 @@ const AnimatedWave = () => {
       ctx.fillStyle = '#ffffff';
       ctx.fill();
 
-      t += 0.022;
+      t += 0.011;
       rafRef.current = requestAnimationFrame(draw);
     };
 

@@ -53,7 +53,7 @@ export default function ContactModal() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md animate-fade-in transition-all duration-300">
+    <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-fade-in transition-all duration-300">
       {/* Backdrop click close */}
       <div className="absolute inset-0" onClick={closeModal} />
 

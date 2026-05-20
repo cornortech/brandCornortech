@@ -12,7 +12,7 @@ const highlights = ['SEO & Content Strategy', 'Social Media Growth', 'Brand Iden
 // ── Canvas animated wave ──────────────────────────────────────────────
 const AnimatedWave = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const rafRef   = useRef<number>();
+  const rafRef   = useRef<number | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;

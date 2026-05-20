@@ -32,7 +32,7 @@ export default function Home() {
       <TestimonialsSection />
 
       {/* 7. ECOSYSTEM TEAM SECTION */}
-      <TeamSection />
+      {/* <TeamSection /> */}
 
       {/* 8. CONTACT SECTION */}
       <ContactSection />

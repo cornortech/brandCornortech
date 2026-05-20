@@ -128,9 +128,8 @@ export default function Footer() {
                 <li key={service}>
                   <Link
                     href="/#services"
-                    className="text-slate-400 hover:text-primary text-sm transition-colors flex items-center gap-1.5 group"
+                    className="text-slate-400 hover:text-primary text-sm transition-colors"
                   >
-                    <span className="w-1.5 h-1.5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                     {service}
                   </Link>
                 </li>

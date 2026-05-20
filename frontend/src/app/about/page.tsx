@@ -214,7 +214,7 @@ export default function About() {
       </section>
 
       {/* 5. TEAM & LEADERSHIP GRID */}
-      <TeamSection />
+      {/* <TeamSection /> */}
 
       {/* 6. CONVERSION FOOTER BANNER */}
       <section className="py-16 bg-slate-50 relative border-t border-slate-100">

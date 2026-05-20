@@ -6,68 +6,88 @@ import { useContactModal } from "@/components/ContactContext";
 
 const packages = [
   {
-    name: "Starter Bundle",
-    desc: "Perfect for local startups and personal brands beginning their digital journey.",
-    price: { monthly: 15000, yearly: 12000 },
-    features: [
-      "2 Managed Social Platforms",
-      "8 Custom Graphic Posts / Month",
-      "Basic SEO Set-up & Audit",
-      "Monthly Performance Reports",
-      "Standard Email Support"
+    name: "UDAAN LAUNCH PACKAGE",
+    desc: "From New Business To Trusted Brand",
+    price: { monthly: 9999, yearly: 119988 },
+    bestFor: "Startups, Cafes, Salons, Clothing Stores, Retail Shops, Local Brands, New Business",
+    includes: [
+      "5 Professional Posts",
+      "5 Reels/Product Service Videos",
+      "3 Promotional Graphics",
+      "Story Based Branding Content",
+      "Trust Building & UGC Strategy",
+      "CTA-Focused Campaigns",
+      "Facebook & Instagram Management",
+      "Monthly Content Calender",
+      "Google & WhatsApp Optimization",
+      "1 Sponsored Ad Campaign",
+      "SEO & Hashtag Optimization",
+      "Monthly Insignts",
+      "Audience Engagement Support",
+      "$10 Ad Credit"
     ],
-    cta: "Start Starter Plan",
-    recommended: false,
-    glow: "border-slate-200"
+    brandFocus: "Awareness, Trust, Consideration, Conversion",
+    idealFor: "Business that are newly launched and need visiblity, audience trust, professional branding, and customer attention.",
+    cta: "Launch My Brand",
+    recommended: false
   },
   {
-    name: "Growth Engine",
-    desc: "Designed for scaling brands looking to dominate their market with high-volume content.",
-    price: { monthly: 30000, yearly: 24000 },
-    features: [
-      "4 Managed Social Platforms",
-      "15 Custom Graphics + 4 Reels/Shorts",
-      "Comprehensive On-Page & Tech SEO",
-      "Meta & Google Ad Campaign Setup",
-      "Bi-weekly Dashboard Syncs",
-      "Dedicated Account Strategist"
+    name: "PRAGATI BRAND GROWTH PACKAGE",
+    desc: "From Known Brand To Trusted Market Choice",
+    price: { monthly: 19999, yearly: 239988 },
+    bestFor: "Growing Brands, Cafes, Fashion Brands, Hospitality, Retail, Service Businesses, Expanding Businesses",
+    includes: [
+      "6 Premium Posts",
+      "10 High-Quality Reels",
+      "6 Custom Brand Graphics",
+      "Storytelling & Brand Positioning",
+      "Testimonial & Trust-Based Content",
+      "Strategic CTA Campaigns",
+      "Competitor Analysis",
+      "Facebook & Instagram Management",
+      "Google SEO Optimization",
+      "WhatsApp Auto Reply Setup",
+      "2 Sponsored Ad Campaigns",
+      "Weekly Reports & Insights",
+      "Professional Photography Session",
+      "Lead Generation Setup",
+      "Website Updates",
+      "$20 Ad Credit"
     ],
-    cta: "Launch Growth Engine",
-    recommended: true,
-    glow: "border-primary shadow-xl shadow-primary/10 relative"
+    brandFocus: "Positioning, Trust, Engagement, Conversion",
+    idealFor: "Business that are newly launched and need visibility, audience trust, professional branding, and customer attention",
+    cta: "Scale My Brand",
+    recommended: true
   },
   {
-    name: "Professional Core",
-    desc: "Complete creative suite + high-performance digital marketing for mature businesses.",
-    price: { monthly: 60000, yearly: 48000 },
-    features: [
-      "Full Channel Management & Strategy",
-      "Daily Custom Posting & Interactive Reels",
-      "Advanced Competitive SEO & Blog Engine",
-      "High-Yield Ad Campaigns (Rs. 2L+ budget support)",
-      "Premium Video/Creative Scripting",
-      "Direct Slack Channel Communication",
-      "Weekly Custom ROI Audits"
+    name: "AAROHAN DIGITAL DOMINANCE PACKAGE",
+    desc: "Lead Bigger, Influence Stronger, Dominate The Market",
+    price: { monthly: 39999, yearly: 479988 },
+    bestFor: "Corporate Brands, Colleges, Hospitals, Cooperatives, Real Estate, Industry Leaders, Multi-Branch Business",
+    includes: [
+      "24 Premium Posts",
+      "16 Professional Reels/Videos",
+      "Advanced Graphics & Motion Design",
+      "Story-Driven Marketing Campaigns",
+      "Authority & Trust Building Content",
+      "High-Converting CTA Strategy",
+      "Meta Lead Generation Setup",
+      "Facebook, Instagram & TikTok Management",
+      "Advanced Google Optimization",
+      "Weekly Analysis Reports",
+      "Website Maintenance",
+      "2 Professional Photography Sessions",
+      "AI Customer Response Setup",
+      "Lead Funnel System",
+      "Competitor & Market Research",
+      "Priority Support",
+      "3 Sponsored Ad Campaigns",
+      "$40 Ad Credit"
     ],
-    cta: "Deploy Professional",
-    recommended: false,
-    glow: "border-slate-200"
-  },
-  {
-    name: "Enterprise Custom",
-    desc: "Custom-built marketing operations and bespoke creative solutions for leaders.",
-    price: { monthly: "Custom", yearly: "Bespoke" },
-    features: [
-      "Full-Scale Brand Identity Design",
-      "Custom Production & Video Shoots",
-      "Continuous Multi-Region SEO campaigns",
-      "Bespoke Lead Generation Funnels",
-      "Unlimited Consulting & Training",
-      "Quarterly Leadership Reviews"
-    ],
-    cta: "Schedule Consultation",
-    recommended: false,
-    glow: "border-slate-200"
+    brandFocus: "Influence, Authority, Engagement, Conversion, Market Leadership",
+    idealFor: "Brands that are already performing well and now need premium digital dominance, stronger authority, scalable growth, and market leadership",
+    cta: "Become A Market Leader",
+    recommended: false
   }
 ];
 
@@ -106,16 +126,13 @@ export default function PricingSection() {
                 billingCycle === "yearly" ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-950"
               }`}
             >
-              Yearly Saving
-              <span className="px-1.5 py-0.5 rounded-full bg-accent-green/10 text-[9px] text-accent-green font-extrabold">
-                -20%
-              </span>
+              Yearly Plan
             </button>
           </div>
         </div>
 
         {/* Pricing Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {packages.map((pkg, index) => {
             const isCustom = typeof pkg.price.monthly === "string";
             const currentPrice = isCustom 
@@ -125,9 +142,9 @@ export default function PricingSection() {
             return (
               <div
                 key={index}
-                className={`bg-white border p-6 rounded-2xl flex flex-col justify-between hover:shadow-lg transition-all duration-300 group ${
-                  pkg.recommended ? "border-primary shadow-lg ring-1 ring-primary/20 scale-[1.03]" : "border-slate-100 hover:border-slate-300"
-                }`}
+                className={`relative h-full bg-white border-2 p-6 rounded-2xl flex flex-col justify-between hover:shadow-lg transition-all duration-300 group ${
+                  pkg.recommended ? "border-primary shadow-lg ring-1 ring-primary/20 scale-[1.03]" : "border-slate-200 hover:border-primary/40"
+                } ${pkg.recommended ? "md:order-last md:col-span-2 md:w-[calc(50%-1rem)] md:mx-auto" : ""}`}
               >
                 <div>
                   {pkg.recommended && (
@@ -136,14 +153,14 @@ export default function PricingSection() {
                     </span>
                   )}
 
-                  <div className="mb-4">
-                    <h3 className="text-lg font-bold text-slate-950">{pkg.name}</h3>
-                    <p className="text-xs text-slate-400 leading-normal mt-1 min-h-[40px]">
+                  <div className="mb-4 min-h-[88px]">
+                    <h3 className="text-xl font-bold text-primary">{pkg.name}</h3>
+                    <p className="text-sm text-slate-400 leading-normal mt-1">
                       {pkg.desc}
                     </p>
                   </div>
 
-                  <div className="mb-6 flex items-baseline gap-1 py-3 border-y border-slate-50 bg-slate-50/50 rounded-lg px-3">
+                  <div className="mb-6 flex items-baseline gap-1 py-1 border-y border-slate-50 bg-slate-50/50 rounded-lg px-3">
                     {!isCustom && (
                       <span className="text-slate-700 font-bold text-sm mr-0.5 shrink-0 self-center">
                         Rs.
@@ -152,17 +169,41 @@ export default function PricingSection() {
                     <span className="text-3xl font-black text-slate-900 leading-none">
                       {typeof currentPrice === 'number' ? currentPrice.toLocaleString('en-IN') : currentPrice}
                     </span>
-                    {!isCustom && <span className="text-xs text-slate-400 font-semibold">/ month</span>}
+                    {!isCustom && (
+                      <span className="text-xs text-slate-400 font-semibold">
+                        / {billingCycle === "monthly" ? "month" : "year"}
+                      </span>
+                    )}
                   </div>
 
-                  <ul className="space-y-3.5 mb-8">
-                    {pkg.features.map((feature, idx) => (
-                      <li key={idx} className="flex gap-2 text-xs text-slate-500 font-medium">
-                        <CheckCircle2 className={`w-4 h-4 shrink-0 ${pkg.recommended ? "text-primary" : "text-slate-400"}`} />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-3 mb-8 items-stretch">
+                    <div className="grid grid-rows-[minmax(116px,auto)_minmax(74px,auto)_minmax(132px,auto)] gap-4 rounded-xl border border-slate-200 bg-white p-4">
+                      <div className="min-h-0">
+                        <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-1.5">Best for</p>
+                        <p className="text-sm text-slate-500 font-medium leading-relaxed">{pkg.bestFor}</p>
+                      </div>
+                      <div className="min-h-0">
+                        <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-1.5">Brand focus</p>
+                        <p className="text-sm text-slate-500 font-medium leading-relaxed">{pkg.brandFocus}</p>
+                      </div>
+                      <div className="min-h-0">
+                        <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-1.5">Ideal for</p>
+                        <p className="text-sm text-slate-500 font-medium leading-relaxed">{pkg.idealFor}</p>
+                      </div>
+                    </div>
+
+                    <div className="h-full rounded-xl border border-slate-200 bg-slate-50/60 p-4">
+                      <p className="text-[11px] font-black uppercase tracking-widest text-primary mb-3">Includes</p>
+                      <ul className="space-y-2.5">
+                        {pkg.includes.map((item, idx) => (
+                          <li key={idx} className="flex gap-1.5 text-[13px] text-slate-500 font-medium leading-snug">
+                            <CheckCircle2 className={`w-4 h-4 shrink-0 ${pkg.recommended ? "text-primary" : "text-slate-400"}`} />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
 
                 <button

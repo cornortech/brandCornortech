@@ -108,7 +108,7 @@ export default function Contact() {
                   Sub-Brand Details
                 </p>
                 <span className="text-[9px] font-bold uppercase tracking-widest text-[#9333EA] bg-[#9333EA]/8 border border-[#9333EA]/15 px-2.5 py-1 rounded-full">
-                  Est. 2024
+                  Est. 2026
                 </span>
               </div>
 
